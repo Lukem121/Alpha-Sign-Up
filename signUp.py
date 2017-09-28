@@ -6,6 +6,16 @@ import re
 from tempMail import tempMail
 
 
+#Welcome Text ##################################################################
+
+print("#################################################")
+print("#################################################")
+print("BolehVPN Free Trial Sign Up Script - Luke Askew")
+print("Allow up to 30 secconds for the code to run")
+print("#################################################")
+print("#################################################")
+
+
 #This code genarates a email ###################################################
 
 
@@ -28,9 +38,7 @@ passwordGen = "".join(choice(string.lowercase) for x in range(randint(min_char, 
 
 #This code sets the password
 
-password = "ThisIsARandomPassword"
-
-print("Code is running please allow up to 30 seconds")
+password = "password123"
 
 
 ###############################################################################
@@ -43,8 +51,6 @@ response = br.open("https://users.bolehvpn.net/")#<--------------------------- W
 #selects the form
 br.form = list(br.forms())[1] #<---------------------------------------------- This code selects the HTML form on the webpage
 
-
-password = "ThisIsARandomPassword"
 
 br['username'] = usernameGen #<----------------------------------------------- Change the 'username' to the name of the input box in the HTML fourm.
 br['email'] = email #<-------------------------------------------------------- Change the 'email' to the name of the input box in the HTML fourm.
@@ -98,5 +104,9 @@ br.open(activationLink) #<----------------------------------------------------- 
 
 time.sleep(5)
 
+print("Login Credentials")
+
 print("User Name: " +usernameGen + "   Email: " +email + "   Password:" + password)
+
+input("Press enter to exit")
 
